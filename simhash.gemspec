@@ -9,12 +9,12 @@ end.flatten
 
 spec = Gem::Specification.new do |s|
   s.name              = "simhash"
-  s.version           = "0.2.5"
-  s.author            = "Alex Gusev"
-  s.email             = "alex.gusev@bookmate.ru"
-  s.homepage          = "http://github.com/bookmate/simhash"
+  s.version           = "0.4.8"
+  s.author            = "Alex Gusev, Julien Ramel"
+  s.email             = "julien.ramel@gmail.com"
+  s.homepage          = "http://github.com/jujudellago/simhash"
   s.rubyforge_project = "simhash"
-  s.description       = "Implementation of Charikar simhashes in Ruby"
+  s.description       = "Implementation of Charikar simhashes in Ruby, updated by Julien Ramel"
   s.platform          = Gem::Platform::RUBY
   s.summary           = "Gives you possbility to convert string into simhashes to futher use: finding near-duplicates, similar strings, etc."
   s.files             = include_files - exclude_files
