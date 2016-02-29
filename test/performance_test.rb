@@ -3,7 +3,7 @@ require './test/helper'
 
 class PerformanceTest < Test::Unit::TestCase
 #  NBRS=[20,100,500]
-    NBRS=[10,20,50,100]
+    NBRS=[10,50,100,500]
   
   def test_hashing_speed
     puts "\n......................... test  256 hashbits and sh1_hash method ......................\n"
@@ -18,7 +18,7 @@ class PerformanceTest < Test::Unit::TestCase
            #puts sih            
          end
        end
-       puts "\nit took #{time} to calculate #{n} simhashes with 256 hashbits and sh1_hash method"
+       puts "it took #{time} to calculate #{n} simhashes with 256 hashbits and sh1_hash method"
      end    
   end
   
@@ -35,7 +35,7 @@ class PerformanceTest < Test::Unit::TestCase
            #puts sih           
          end
        end
-       puts "\nit took #{time} to calculate #{n} simhashes with 64bit hashbits and ruby custom_hash_vl_rb"
+       puts "it took #{time} to calculate #{n} simhashes with 64bit hashbits and ruby custom_hash_vl_rb"
      end    
   end
   
@@ -52,7 +52,7 @@ class PerformanceTest < Test::Unit::TestCase
            #puts sih           
          end
        end
-       puts "\nit took #{time} to calculate #{n} simhashes with 64 hashbits and hash_vl C method"
+       puts "it took #{time} to calculate #{n} simhashes with 64 hashbits and hash_vl C method"
      end    
   end
   
@@ -68,7 +68,7 @@ class PerformanceTest < Test::Unit::TestCase
             #puts sih
           end
         end
-        puts "\nit took #{time} to calculate #{n} simhashes with 256 hashbits and hash_vl C method"
+        puts "it took #{time} to calculate #{n} simhashes with 256 hashbits and hash_vl C method"
       end    
    end
 end
