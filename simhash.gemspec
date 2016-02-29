@@ -29,12 +29,15 @@ spec = Gem::Specification.new do |s|
     if Gem::Version.new(Gem::RubyGemsVersion) >= Gem::Version.new('1.2.0') then
       s.add_runtime_dependency(%q<unicode>, [">= 0.3.1"])
       s.add_runtime_dependency(%q<activesupport>)      
+      s.add_dependency(%q<faker>)
     else
       s.add_dependency(%q<unicode>, [">= 0.3.1"])
       s.add_dependency(%q<activesupport>)
+      s.add_dependency(%q<faker>)
     end
   else
     s.add_dependency(%q<unicode>, [">= 0.3.1"])
     s.add_dependency(%q<activesupport>)
+    s.add_dependency(%q<faker>)
   end
 end

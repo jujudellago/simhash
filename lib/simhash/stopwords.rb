@@ -6,7 +6,14 @@ module Simhash
   module Stopwords
     # TODO need to remove accent
     # TODO need to filter per language
-    #ALL = RU + EN + FR
-    ALL = FR
+    ALL = RU + EN + FR
+    #ALL = FR
+    
+    def self.lng(language)
+      eval(language)
+      
+    end
   end
+  
+  
 end

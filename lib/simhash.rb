@@ -7,10 +7,10 @@ require 'string'
 require 'integer'
 require 'simhash/stopwords'
 
-begin
+#begin
   require 'string_hashing'
-rescue LoadError
-end
+#rescue LoadError
+#end
 
 module Simhash  
   DEFAULT_STRING_HASH_METHOD = String.public_instance_methods.include?("hash_vl") ? :hash_vl : :hash_vl_rb
@@ -66,7 +66,7 @@ module Simhash
   def self.each_filtered_token(tokens, options={})
     token_min_size = options[:token_min_size].to_i
     stop_sentenses = options[:stop_sentenses]
-    language = options[:language].to_s.upcase 
+    language = options[:language]
     tokens.each do |token|
       # cutting punctuation (\302\240 is unbreakable space)
       token = token.gsub(PUNCTUATION_REGEXP, ' ') if !options[:preserve_punctuation]
@@ -74,7 +74,12 @@ module Simhash
       token = Unicode::downcase(token.strip)
       
       # cutting stop-words
-      token = token.split(" ").reject{ |w| Stopwords::ALL.index(" #{w} ") != nil }.join(" ") if options[:stop_words]
+      if language.nil?
+        token = token.split(" ").reject{ |w| Stopwords::ALL.index(" #{w} ") != nil }.join(" ") if options[:stop_words]
+      else
+        language = options[:language][0..1].to_s.upcase 
+        token = token.split(" ").reject{ |w| Stopwords.lng(language).index(" #{w} ") != nil }.join(" ") if options[:stop_words]
+      end
     
       # cutting stop-sentenses
       next if stop_sentenses && stop_sentenses.include?(" #{token} ")

@@ -15,8 +15,13 @@ class SimhashTest < Test::Unit::TestCase
     # String with stop words should be processed as same string withous stop-words
     assert_equal Simhash.hash("In the beginning was the Word".split, :hashbits => 64, :stop_words => true), Simhash.hash("Word".split, :hashbits => 64)
   end
+  def test_hashing_with_stopwords_and_language_parameter
+    # String with stop words should be processed as same string withous stop-words
+    assert_equal Simhash.hash("In the beginning was the Word".split, :hashbits => 64, :stop_words => true,:language=>"eng"), Simhash.hash("Word".split, :hashbits => 64)
+  end
+  
   
   def test_hashing_with_nonascii_stopwords
-    assert_equal Simhash.hash("В начале было Слово".split, :hashbits => 64, :stop_words => true), Simhash.hash("начале Слово".split, :hashbits => 64)
+    assert_equal Simhash.hash("В начале было Слово".split, :hashbits => 64, :stop_words => true,:language=>"rus"), Simhash.hash("начале Слово".split, :hashbits => 64)
   end 
 end
