@@ -14,6 +14,7 @@ require "string"
 require "integer"
 require "faker"
 require "chronic_duration"
+#require 'profile'
 
 #begin
   require "string_hashing" 

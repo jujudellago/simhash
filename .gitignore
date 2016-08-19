@@ -3,3 +3,6 @@
 *.o
 Makefile
 /tmp
+ext/string_hashing/.RUBYARCHDIR.time
+ext/string_hashing/mkmf.log
+mkmf.log
